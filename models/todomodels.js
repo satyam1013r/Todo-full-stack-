@@ -5,7 +5,7 @@ const TodoSchema=new mongoose.Schema({
         required:true
     },
     userId:{
-        type:mongoose.Schema.Types.ObjectId(),// see as id 
+        type:mongoose.Schema.Types.ObjectId,// see as id 
         ref:"User",                         
                                                      // tells which model it connects to? model name write  it tell mongoose This userId comes from the User model”
         required:true
