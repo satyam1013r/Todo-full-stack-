@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <header>
+            <h2>My Todo App</h2>
+           <button class="logout" id="logout" onclick="logout()">Logout</button>
+        </header>
+    </section>
+    <main>
+        <div class="container">
+            <div class="input-task">
+            <input type="text" id="task" placeholder="Add Task">
+            <button class="addbtn" onclick="addTask()">Add</button>
+            </div>
+        </div>
+    </main>
+    <section>
+        <div class="tasks">
+  <ul id="taskList"></ul>
+</div>
+    </section>
+    <footer><p>All rights reserved</p></footer>
+
+
+</body>
+<script src="script.js"></script>
+
+</html>
