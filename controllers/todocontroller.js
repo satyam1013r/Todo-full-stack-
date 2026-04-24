@@ -8,12 +8,13 @@ const TODO=require("../models/todomodels")
 const createTask=async(req,res)=>{
     try{
         const task=req.body.task
+        console.log(req.userId)
         if(!task||!req.userId){
             return res.status(400).json({message:"All fields are required!"})
         }
         const todo=new TODO({
             task,
-            userId=req.userId                     // tell mongodb this task belong to this user (from middleware)
+            userId:req.userId                     // tell mongodb this task belong to this user (from middleware)
         })
         await todo.save()
         res.json(todo)

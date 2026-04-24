@@ -1,0 +1,168 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body layout */
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #333;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+header h2 {
+  font-weight: 600;
+}
+
+.logout {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #ff4d4d;
+  color: white;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background: #e60000;
+}
+
+/* Main center content */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card container (used for login/signup + todo box) */
+.container {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 350px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #667eea;
+}
+
+/* Buttons */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  background: #667eea;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #4c5bd4;
+}
+
+/* Add task section */
+.input-task {
+  display: flex;
+  gap: 10px;
+}
+
+.input-task input {
+  flex: 1;
+}
+
+.addbtn {
+  background: #28a745;
+}
+
+.addbtn:hover {
+  background: #1e7e34;
+}
+
+/* Task list */
+.tasks {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#taskList {
+  list-style: none;
+  width: 400px;
+}
+
+/* Each task item */
+#taskList li {
+  background: white;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Task buttons */
+.editbtn {
+  background: #ffc107;
+  margin-right: 5px;
+}
+
+.editbtn:hover {
+  background: #e0a800;
+}
+
+.deletebtn {
+  background: #dc3545;
+}
+
+.deletebtn:hover {
+  background: #b02a37;
+}
+
+/* Done + Cancel */
+.donebtn {
+  background: #28a745;
+}
+
+.cancelbtn {
+  background: #6c757d;
+  margin-left: 5px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+}

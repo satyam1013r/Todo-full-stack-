@@ -11,7 +11,10 @@ const path=require("path")
 const app=express()
 //connect middleware
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+  origin: "*", // allow all (for now)
+}));
+
 app.use(express.static(path.join(__dirname,"public")))
 
 //database connect
@@ -24,6 +27,8 @@ app.get("/",(req,res)=>{
 
 app.use("/api",todoRoutes)
 app.use("/api",UserRoutes)
+
+
 
 //port 
 const port=process.env.PORT||3000

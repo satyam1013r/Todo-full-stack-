@@ -16,7 +16,7 @@ const signup=async(req,res)=>{
         const user=new User({email,password})
         await user.save()
         res.status(201).json({
-            _id:user.id,
+            _id:user._id,
             email:user.email
         })
     }
@@ -31,11 +31,26 @@ const signup=async(req,res)=>{
 //login 
 const login=async (req,res)=>{
     try{
-        const {email,password}=req.body
-        const user=await User.findOne({email,password})
-        if(!user){
-            return res.status(400).json({message:"Invalid credentials"})
-        }        
+// debug 3 line 
+// console.log("BODY:", req.body);
+// console.log("EMAIL:", `"${req.body.email}"`);
+// console.log("PASSWORD:", `"${req.body.password}"`);
+
+        const email = req.body.email.trim()
+const password = req.body.password.trim()
+        const user=await User.findOne({email})
+//         if (!user || user.password !== password) {
+//     return res.status(400).json({ message: "Invalid credentials" })
+// }
+//debug add this checks postman
+if (!user) {
+    return res.status(400).json({ message: "User not found" });
+}
+
+if (user.password !== password) {
+    return res.status(400).json({ message: "Wrong password" });
+}
+           
         const token=jwt.sign(
             {userId:user._id},
            process.env.JWT_Secret,
